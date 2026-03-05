@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Creative To‑Do App with Due Dates</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- 🔄 Dark Mode Toggle -->
+  <div class="toggle-container">
+    <label class="switch">
+      <input type="checkbox" id="themeToggle">
+      <span class="slider"></span>
+    </label>
+    <span class="toggle-text">🌙 Dark Mode</span>
+  </div>
+
+  <!-- 🔀 View Toggle Buttons -->
+  <div class="view-toggle" style="text-align: center; margin-top: 10px;">
+    <button onclick="showTaskView()">📝 Task View</button>
+    <button onclick="showCalendarView()">📅 Calendar View</button>
+  </div>
+
+  <!-- 📝 Task View Section -->
+  <div class="app" id="taskView">
+    <h1>📅 My Task List</h1>
+    <div class="input-area">
+      <input type="text" id="taskInput" placeholder="What do you need to do?" />
+      <input type="datetime-local" id="dueDate" />
+      <button id="addBtn">➕</button>
+    </div>
+    <div id="taskList" class="task-list"></div>
+  </div>
+
+  <!-- 📅 Calendar View Section -->
+  <div id="calendarView" style="display: none; padding: 20px;">
+    <h2>📅 Calendar</h2>
+    <div class="calendar" id="calendarGrid"></div>
+
+    <!-- 📌 Task Popup -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+      <h2>Tasks on <span id="popupDate"></span></h2>
+      <ul id="popupTaskList"></ul>
+    </div>
+  </div>
+</body>
+</html>
+
